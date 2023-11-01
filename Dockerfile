@@ -19,7 +19,7 @@ FROM alpine
 # Install any required dependencies.
 RUN apk --no-cache add ca-certificates
 ARG PORT
-ENV PORT={PORT}
+ENV PORT=${PORT}
 WORKDIR /root/
 # Copy the binary from the builder stage and set it as the default command.
 COPY --from=builder /app/bin/hello /usr/local/bin/
