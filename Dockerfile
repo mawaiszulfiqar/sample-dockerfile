@@ -20,6 +20,8 @@ FROM alpine
 RUN apk --no-cache add ca-certificates
 ARG PORT
 ENV PORT=${PORT}
+ARG DATABASE_URL
+ENV DATABASE_URL=${DATABASE_URL}
 WORKDIR /root/
 # Copy the binary from the builder stage and set it as the default command.
 COPY --from=builder /app/bin/hello /usr/local/bin/
